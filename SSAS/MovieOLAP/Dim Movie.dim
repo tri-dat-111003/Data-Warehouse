@@ -1,0 +1,328 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="16c43ee8-9369-433d-8803-0a67b329c5f2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Movie</ID>
+  <Name>Dim Movie</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-556" scrolltop="-3228" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="5080" y="11906" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="0100000090019e330100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimMovie" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3479" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000970d000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimMovie" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-556</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3228</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="c979a7b7-b5c9-4765-b013-ec5236f9bd4a">
+    <DataSourceViewID>Movie DWH</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="5c7a37a8-601a-40ef-8f65-a2433feba0d0">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="d1b20073-8b69-40ca-bf9e-d436a272cdca">
+      <ID>Movie Key</ID>
+      <Name>Movie Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5e77be3d-5bc5-42fa-866a-109e6f156701">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="886496a0-7775-4637-a261-6b4e37efc3fc">
+            <TableID>dbo_DimMovie</TableID>
+            <ColumnID>MovieKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="69db590b-e92b-4ab6-8c85-6fdc3414010b">
+          <AttributeID>Title</AttributeID>
+          <Name>Title</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5b960dcb-9a4f-48d7-be8d-96fa9c4833ba">
+          <AttributeID>Release Date</AttributeID>
+          <Name>Release Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="46ffc0e0-d30a-4370-9422-8f4dbf3fd904">
+          <AttributeID>Runtime</AttributeID>
+          <Name>Runtime</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0a0c3c77-2dde-41db-a8c5-c17aef7888b8">
+          <AttributeID>Budget</AttributeID>
+          <Name>Budget</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="499b6519-e7d8-4358-9543-0d753157bb30">
+          <AttributeID>Revenue</AttributeID>
+          <Name>Revenue</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="acfbb913-80d3-40c2-8281-5b2e48e5ded4">
+          <AttributeID>Vote Average</AttributeID>
+          <Name>Vote Average</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="753f85a4-2efe-4891-a697-9dc6542a3c16">
+          <AttributeID>Vote Count</AttributeID>
+          <Name>Vote Count</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="fa58198f-77ca-4afa-ae3b-b27290aaaa83">
+          <AttributeID>Popularity</AttributeID>
+          <Name>Popularity</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d0c31466-0562-4516-8b83-4fab9d8cf7d8">
+          <AttributeID>Movie Status</AttributeID>
+          <Name>Movie Status</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="38176195-b8d3-4ded-96d4-8acdfba49a83">
+      <ID>Title</ID>
+      <Name>Title</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="77122ebc-f9fe-4bfe-9233-b690c06f49c8">
+          <DataType>WChar</DataType>
+          <DataSize>1000</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ef5e4dd8-dada-40e9-af06-2fcba4043c9b">
+            <TableID>dbo_DimMovie</TableID>
+            <ColumnID>title</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f31374a2-c9f7-408a-8438-952814e502e7">
+      <ID>Release Date</ID>
+      <Name>Release Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="65e5d98d-8c9c-472b-9077-1dc66d87d6cc">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cece2b12-a770-4af2-abae-6805da9f5405">
+            <TableID>dbo_DimMovie</TableID>
+            <ColumnID>release_date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="815c144e-45d5-4fd4-8186-c583754aa1a5">
+      <ID>Runtime</ID>
+      <Name>Runtime</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e36f451c-253f-4400-8793-76946c387c82">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="76aeb56d-7728-4551-bc15-ef9389b13361">
+            <TableID>dbo_DimMovie</TableID>
+            <ColumnID>runtime</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e0b41e70-7bec-46fc-ad3e-26686adf35c9">
+      <ID>Budget</ID>
+      <Name>Budget</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="20ec23a1-6ba5-431b-a358-fcd356c14782">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2160acdc-a60d-4a0d-a1ce-2a29a3a5c288">
+            <TableID>dbo_DimMovie</TableID>
+            <ColumnID>Budget</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="88d8ca52-5d64-4e33-a8c0-78352d69fb78">
+      <ID>Revenue</ID>
+      <Name>Revenue</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8ab86f7a-b8d9-4e0b-896c-2a9a9a3507e6">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5707cb1e-2303-45fd-9542-8d9aa6d8b3d8">
+            <TableID>dbo_DimMovie</TableID>
+            <ColumnID>Revenue</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="972b3452-b9f2-4b2f-93a1-211711b26da4">
+      <ID>Vote Average</ID>
+      <Name>Vote Average</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="77af7958-8e1f-4859-ac17-df67dc287e54">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b53ed601-d212-4655-a96b-6f374f43b2a5">
+            <TableID>dbo_DimMovie</TableID>
+            <ColumnID>Vote_average</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bf39310b-ed3e-45ab-b512-3ae37e964b03">
+      <ID>Vote Count</ID>
+      <Name>Vote Count</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ae608a9b-0b70-45f8-8755-73e2f84f3d56">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b096c847-179f-4512-9846-8729bb7b3324">
+            <TableID>dbo_DimMovie</TableID>
+            <ColumnID>Vote_count</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2557a68b-a67e-4660-8c27-446998f69228">
+      <ID>Popularity</ID>
+      <Name>Popularity</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="330d29b0-bcfb-4bdf-a119-6a12fb78196a">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="232cf602-ce5f-45b2-aee3-ae95c75a8019">
+            <TableID>dbo_DimMovie</TableID>
+            <ColumnID>Popularity</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9a38bad9-f94b-410f-8de7-6f54729042e7">
+      <ID>Movie Status</ID>
+      <Name>Movie Status</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="93cd6886-f4b3-47ed-a659-36b81cb9aaf3">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d8010e60-5e4a-4d0c-88c9-66feef4ae2fb">
+            <TableID>dbo_DimMovie</TableID>
+            <ColumnID>movie_status</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="2f9fc0b1-a0d1-4689-8f02-ac02b3cb8b33">
+      <ID>Hierarchy</ID>
+      <Name>MovieHierarchy</Name>
+      <Levels>
+        <Level dwd:design-time-name="27d65202-0ca9-4610-8068-fcd4dbfac8a3">
+          <ID>Title</ID>
+          <Name>Title</Name>
+          <SourceAttributeID>Title</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="e3fb5273-8abc-414a-a998-b97598aca9f3">
+          <ID>Release Date</ID>
+          <Name>Release Date</Name>
+          <SourceAttributeID>Release Date</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="1d3f5cfa-8607-42a1-81cb-397ccfcc8034">
+          <ID>Budget</ID>
+          <Name>Budget</Name>
+          <SourceAttributeID>Budget</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="5a38c59d-1cfb-4dfd-bbf0-5c5671dd584f">
+          <ID>Revenue</ID>
+          <Name>Revenue</Name>
+          <SourceAttributeID>Revenue</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="bdfcbc53-bc73-46f6-ab75-5492fd730c58">
+          <ID>Popularity</ID>
+          <Name>Popularity</Name>
+          <SourceAttributeID>Popularity</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="030c88cd-e0c1-4e08-a4a2-5304057263fb">
+          <ID>Vote Average</ID>
+          <Name>Vote Average</Name>
+          <SourceAttributeID>Vote Average</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="0de5ef5f-6091-4134-8cd5-7d28d2f874ec">
+          <ID>Vote Count</ID>
+          <Name>Vote Count</Name>
+          <SourceAttributeID>Vote Count</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="52f402db-45a6-4e37-89f9-364963984740">
+          <ID>Runtime</ID>
+          <Name>Runtime</Name>
+          <SourceAttributeID>Runtime</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="552cc770-39b7-4957-8ed2-54f1b9188671">
+          <ID>Movie Status</ID>
+          <Name>Movie Status</Name>
+          <SourceAttributeID>Movie Status</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Movies-ETL", "Movies-ETL.dtproj", "{F8385EF1-17EA-4BA2-BD4A-5BFB05BD5518}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8385EF1-17EA-4BA2-BD4A-5BFB05BD5518}.Development|Default.ActiveCfg = Development
+		{F8385EF1-17EA-4BA2-BD4A-5BFB05BD5518}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90725A1C-CC3E-4025-9FE6-A72B40AC1D64}
+	EndGlobalSection
+EndGlobal

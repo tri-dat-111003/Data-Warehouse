@@ -1,0 +1,1868 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/15/2024 11:08:38 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-V3U3D65"
+  DTS:CreatorName="DESKTOP-V3U3D65\user"
+  DTS:DTSID="{948BFA88-BF20-4F77-8CEF-0535BE9A69FC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{C6EE00DE-0DEF-458C-915D-F52503972310}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5B3E9EE0-713B-42EE-B7CD-3F1F35426EF6}"
+      DTS:ObjectName="DESKTOP-V3U3D65\TRIDAT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-V3U3D65\TRIDAT;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DDFF39AE-BB52-4FB1-9B11-A3ADD72E7B32}"
+      DTS:ObjectName="DESKTOP-V3U3D65\TRIDAT 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-V3U3D65\TRIDAT;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT.movies]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2365BD8B-74F7-4444-A1DC-81979C1AD01E}"
+      DTS:ObjectName="DESKTOP-V3U3D65\TRIDAT.movies">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-V3U3D65\TRIDAT;Initial Catalog=movies;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT.Movie_DWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3916C990-9999-43E9-91F4-CC5E237ADD31}"
+      DTS:ObjectName="DESKTOP-V3U3D65\TRIDAT.Movie_DWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-V3U3D65\TRIDAT;Initial Catalog=Movie_DWH;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT.Movie_DWH_Stage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E5E9277B-67E4-4E65-A739-7BB2EA012219}"
+      DTS:ObjectName="DESKTOP-V3U3D65\TRIDAT.Movie_DWH_Stage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-V3U3D65\TRIDAT;Initial Catalog=Movie_DWH_Stage;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF - Extract From Source to Stage stgProfit"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{961D6DCC-ACFA-4558-813F-7C5757004064}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Extract From Source to Stage stgProfit"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Extract From Source to Stage stgProfit\Profit"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Profit"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct m.movie_id, p.company_id, release_date, budget, revenue, popularity, vote_average, vote_count
+from movie m
+	join movie_company c on m.movie_id = c.company_id
+	join production_company p on p.company_id = c.company_id
+where year(release_date) &gt;= 1996 and year(release_date) &lt;= 2001</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT.movies]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT.movies]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[movie_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[movie_id]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[movie_id]"
+                      name="movie_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[company_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[company_id]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[company_id]"
+                      name="company_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[release_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[release_date]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[release_date]"
+                      name="release_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[budget]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[budget]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[budget]"
+                      name="budget"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[revenue]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[revenue]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[revenue]"
+                      name="revenue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[popularity]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[popularity]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[popularity]"
+                      name="popularity"
+                      precision="12"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[vote_average]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[vote_average]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[vote_average]"
+                      name="vote_average"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[vote_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[vote_count]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[vote_count]"
+                      name="vote_count"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[movie_id]"
+                      dataType="i4"
+                      name="movie_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[company_id]"
+                      dataType="i4"
+                      name="company_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[release_date]"
+                      dataType="dbDate"
+                      name="release_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[budget]"
+                      dataType="i8"
+                      name="budget" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[revenue]"
+                      dataType="i8"
+                      name="revenue" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[popularity]"
+                      dataType="numeric"
+                      name="popularity"
+                      precision="12"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[vote_average]"
+                      dataType="numeric"
+                      name="vote_average"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].ExternalColumns[vote_count]"
+                      dataType="i4"
+                      name="vote_count" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[movie_id]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[movie_id]"
+                      name="movie_id" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[company_id]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[company_id]"
+                      name="company_id" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[release_date]"
+                      dataType="dbDate"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[release_date]"
+                      name="release_date" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[budget]"
+                      dataType="i8"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[budget]"
+                      name="budget" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[revenue]"
+                      dataType="i8"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[revenue]"
+                      name="revenue" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[popularity]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[popularity]"
+                      name="popularity"
+                      precision="12"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[vote_average]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[vote_average]"
+                      name="vote_average"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[vote_count]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[vote_count]"
+                      name="vote_count" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="stgProfit"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stgProfit]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT.Movie_DWH_Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT.Movie_DWH_Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].Columns[movie_id]"
+                      cachedDataType="i4"
+                      cachedName="movie_id"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[movie_id]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[movie_id]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].Columns[company_id]"
+                      cachedDataType="i4"
+                      cachedName="company_id"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[company_id]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[company_id]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].Columns[release_date]"
+                      cachedDataType="dbDate"
+                      cachedName="release_date"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[release_date]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[release_date]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].Columns[budget]"
+                      cachedDataType="i8"
+                      cachedName="budget"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[budget]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[budget]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].Columns[revenue]"
+                      cachedDataType="i8"
+                      cachedName="revenue"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[revenue]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[revenue]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].Columns[popularity]"
+                      cachedDataType="numeric"
+                      cachedName="popularity"
+                      cachedPrecision="12"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[popularity]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[popularity]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].Columns[vote_average]"
+                      cachedDataType="numeric"
+                      cachedName="vote_average"
+                      cachedPrecision="4"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[vote_average]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[vote_average]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].Columns[vote_count]"
+                      cachedDataType="i4"
+                      cachedName="vote_count"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[vote_count]"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output].Columns[vote_count]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[movie_id]"
+                      dataType="i4"
+                      name="movie_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[company_id]"
+                      dataType="i4"
+                      name="company_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[release_date]"
+                      dataType="dbDate"
+                      name="release_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[budget]"
+                      dataType="i8"
+                      name="budget" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[revenue]"
+                      dataType="i8"
+                      name="revenue" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[popularity]"
+                      dataType="numeric"
+                      name="popularity"
+                      precision="12"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[vote_average]"
+                      dataType="numeric"
+                      name="vote_average"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input].ExternalColumns[vote_count]"
+                      dataType="i4"
+                      name="vote_count" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Extract From Source to Stage stgProfit.Paths[OLE DB Source Output]"
+              endId="Package\DF - Extract From Source to Stage stgProfit\stgProfit.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Extract From Source to Stage stgProfit\Profit.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF - Load from stgProfit to FactProfit"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{29E127EA-8B2D-493D-AC82-622C64C0FD48}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Load from stgProfit to FactProfit"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Load from stgProfit to FactProfit\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Inputs[Derived Column Input].Columns[release_date]"
+                      cachedDataType="dbDate"
+                      cachedName="release_date"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[release_date]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Inputs[Derived Column Input].Columns[budget]"
+                      cachedDataType="i8"
+                      cachedName="budget"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[budget]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Inputs[Derived Column Input].Columns[revenue]"
+                      cachedDataType="i8"
+                      cachedName="revenue"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[revenue]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Outputs[Derived Column Output].Columns[DateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Outputs[Derived Column Output].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DAY](#{Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[release_date]}) + [MONTH](#{Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[release_date]}) * 100 + [YEAR](#{Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[release_date]}) * 10000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DAY(release_date) + MONTH(release_date) * 100 + YEAR(release_date) * 10000</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Outputs[Derived Column Output].Columns[Profit]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Outputs[Derived Column Output].Columns[Profit]"
+                      name="Profit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[revenue]} - #{Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[budget]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">revenue - budget</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgProfit to FactProfit\FactProfit"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="FactProfit"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactProfit]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Connections[OleDbConnection]"
+                  connectionManagerID="{915E81D7-327B-46F4-B553-C2CDBE77E7F1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-V3U3D65_TRIDAT.Movie_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].Columns[budget]"
+                      cachedDataType="i8"
+                      cachedName="budget"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[Budget]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[budget]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].Columns[revenue]"
+                      cachedDataType="i8"
+                      cachedName="revenue"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[Revenue]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[revenue]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].Columns[popularity]"
+                      cachedDataType="numeric"
+                      cachedName="popularity"
+                      cachedPrecision="12"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[Popularity]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[popularity]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].Columns[vote_average]"
+                      cachedDataType="numeric"
+                      cachedName="vote_average"
+                      cachedPrecision="4"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[Vote_average]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[vote_average]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].Columns[vote_count]"
+                      cachedDataType="i4"
+                      cachedName="vote_count"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[Vote_count]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[vote_count]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].Columns[CompanyKey]"
+                      cachedDataType="i4"
+                      cachedName="CompanyKey"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Outputs[Lookup Match Output].Columns[CompanyKey]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].Columns[MovieKey]"
+                      cachedDataType="i4"
+                      cachedName="MovieKey"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[MovieKey]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Outputs[Lookup Match Output].Columns[MovieKey]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Outputs[Derived Column Output].Columns[DateKey]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].Columns[Profit]"
+                      cachedDataType="i8"
+                      cachedName="Profit"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[profit]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Outputs[Derived Column Output].Columns[Profit]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[MovieKey]"
+                      dataType="i4"
+                      name="MovieKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                      dataType="i4"
+                      name="CompanyKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[profit]"
+                      dataType="i8"
+                      name="profit" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[Budget]"
+                      dataType="i8"
+                      name="Budget" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[Revenue]"
+                      dataType="i8"
+                      name="Revenue" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[Popularity]"
+                      dataType="numeric"
+                      name="Popularity"
+                      precision="12"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[Vote_average]"
+                      dataType="numeric"
+                      name="Vote_average"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input].ExternalColumns[Vote_count]"
+                      dataType="i4"
+                      name="Vote_count" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup companyKey"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimCompany]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimCompany]) [refTable]
+where [refTable].[CompanyId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CompanyKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Company_name" dataType="DT_STR" length="200" precision="0" scale="0" codePage="932"/&gt;&lt;referenceColumn name="RowIsCurrent" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowStartDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowEndDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowChangeReason" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[company_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT.Movie_DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT.Movie_DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Inputs[Lookup Input].Columns[company_id]"
+                      cachedDataType="i4"
+                      cachedName="company_id"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[company_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CompanyId</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Outputs[Lookup Match Output].Columns[CompanyKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Outputs[Lookup Match Output].Columns[CompanyKey]"
+                      name="CompanyKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">CompanyKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup movieKey"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimMovie]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimMovie]) [refTable]
+where [refTable].[MovieId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="MovieKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MovieId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="1000" precision="0" scale="0" codePage="932"/&gt;&lt;referenceColumn name="release_date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="runtime" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Budget" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Revenue" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Vote_average" dataType="DT_NUMERIC" length="0" precision="4" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Vote_count" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Popularity" dataType="DT_NUMERIC" length="0" precision="12" scale="6" codePage="0"/&gt;&lt;referenceColumn name="movie_status" dataType="DT_STR" length="50" precision="0" scale="0" codePage="932"/&gt;&lt;referenceColumn name="RowIsCurrent" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowStartDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowEndDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowChangeReason" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[movie_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT.Movie_DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT.Movie_DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Inputs[Lookup Input].Columns[movie_id]"
+                      cachedDataType="i4"
+                      cachedName="movie_id"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[movie_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MovieId</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Outputs[Lookup Match Output].Columns[MovieKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Outputs[Lookup Match Output].Columns[MovieKey]"
+                      name="MovieKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">MovieKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgProfit to FactProfit\stgProfit"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="stgProfit"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgProfit]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT.Movie_DWH_Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-V3U3D65\TRIDAT.Movie_DWH_Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[movie_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[movie_id]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[movie_id]"
+                      name="movie_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[company_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[company_id]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[company_id]"
+                      name="company_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[release_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[release_date]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[release_date]"
+                      name="release_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[budget]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[budget]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[budget]"
+                      name="budget"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[revenue]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[revenue]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[revenue]"
+                      name="revenue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[popularity]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[popularity]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[popularity]"
+                      name="popularity"
+                      precision="12"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[vote_average]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[vote_average]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[vote_average]"
+                      name="vote_average"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[vote_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[vote_count]"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].Columns[vote_count]"
+                      name="vote_count"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[movie_id]"
+                      dataType="i4"
+                      name="movie_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[company_id]"
+                      dataType="i4"
+                      name="company_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[release_date]"
+                      dataType="dbDate"
+                      name="release_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[budget]"
+                      dataType="i8"
+                      name="budget" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[revenue]"
+                      dataType="i8"
+                      name="revenue" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[popularity]"
+                      dataType="numeric"
+                      name="popularity"
+                      precision="12"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[vote_average]"
+                      dataType="numeric"
+                      name="vote_average"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output].ExternalColumns[vote_count]"
+                      dataType="i4"
+                      name="vote_count" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[movie_id]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[movie_id]"
+                      name="movie_id" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[company_id]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[company_id]"
+                      name="company_id" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[release_date]"
+                      dataType="dbDate"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[release_date]"
+                      name="release_date" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[budget]"
+                      dataType="i8"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[budget]"
+                      name="budget" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[revenue]"
+                      dataType="i8"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[revenue]"
+                      name="revenue" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[popularity]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[popularity]"
+                      name="popularity"
+                      precision="12"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[vote_average]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[vote_average]"
+                      name="vote_average"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[vote_count]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[vote_count]"
+                      name="vote_count" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Load from stgProfit to FactProfit.Paths[Derived Column Output]"
+              endId="Package\DF - Load from stgProfit to FactProfit\FactProfit.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DF - Load from stgProfit to FactProfit.Paths[Lookup Match Output]"
+              endId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DF - Load from stgProfit to FactProfit.Paths[Lookup Match Output1]"
+              endId="Package\DF - Load from stgProfit to FactProfit\Derived Column.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DF - Load from stgProfit to FactProfit.Paths[OLE DB Source Output]"
+              endId="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Load from stgProfit to FactProfit\stgProfit.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{17A8C01C-56FC-443D-9B3F-2455406DC02F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BD55C68F-D095-40F4-9C71-DEF2BE3DE41B}"
+          SQLTask:SqlStatementSource="truncate table stgProfit;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{F76D8E22-0BC4-4BB4-8626-FD895057F56E}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF - Extract From Source to Stage stgProfit" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{6C9409AF-89AA-4E47-B8F3-774DB8058DF0}"
+      DTS:From="Package\DF - Extract From Source to Stage stgProfit"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DF - Load from stgProfit to FactProfit" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="283,42"
+          Id="Package\DF - Extract From Source to Stage stgProfit"
+          TopLeft="116,165" />
+        <NodeLayout
+          Size="253.5,42"
+          Id="Package\DF - Load from stgProfit to FactProfit"
+          TopLeft="245,260" />
+        <NodeLayout
+          Size="163.5,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="149,70.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="230.75,112.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.75,52.5"
+              Start="0,0"
+              End="26.75,45">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.25"
+                    Point2="0,26.25"
+                    Point3="4,26.25" />
+                  <mssgle:LineSegment
+                    End="22.75,26.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.75,26.25"
+                    Point2="26.75,26.25"
+                    Point3="26.75,30.25" />
+                  <mssgle:LineSegment
+                    End="26.75,45" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="257.5,207">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="114.25,53"
+              Start="0,0"
+              End="114.25,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="110.25,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="110.25,26.5"
+                    Point2="114.25,26.5"
+                    Point3="114.25,30.5" />
+                  <mssgle:LineSegment
+                    End="114.25,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF - Extract From Source to Stage stgProfit">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="118,42"
+          Id="Package\DF - Extract From Source to Stage stgProfit\stgProfit"
+          TopLeft="199,187" />
+        <NodeLayout
+          Size="104,42"
+          Id="Package\DF - Extract From Source to Stage stgProfit\Profit"
+          TopLeft="186,92" />
+        <EdgeLayout
+          Id="Package\DF - Extract From Source to Stage stgProfit.Paths[OLE DB Source Output]"
+          TopLeft="238,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.5,53"
+              Start="0,0"
+              End="46.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="42.5,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.5,26.5"
+                    Point2="46.5,26.5"
+                    Point3="46.5,30.5" />
+                  <mssgle:LineSegment
+                    End="46.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Extract From Source to Stage stgProfit\Profit">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Extract From Source to Stage stgProfit\stgProfit">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF - Load from stgProfit to FactProfit">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="118,42"
+          Id="Package\DF - Load from stgProfit to FactProfit\stgProfit"
+          TopLeft="110,105" />
+        <NodeLayout
+          Size="161.5,42"
+          Id="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey"
+          TopLeft="268,177" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DF - Load from stgProfit to FactProfit\Derived Column"
+          TopLeft="275,279" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey"
+          TopLeft="295,94" />
+        <NodeLayout
+          Size="123.5,42"
+          Id="Package\DF - Load from stgProfit to FactProfit\FactProfit"
+          TopLeft="291,354" />
+        <EdgeLayout
+          Id="Package\DF - Load from stgProfit to FactProfit.Paths[OLE DB Source Output]"
+          TopLeft="228,126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="67,-11"
+              Start="0,0"
+              End="59.5,-11">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.5,0"
+                    Point2="33.5,0"
+                    Point3="33.5,-4" />
+                  <mssgle:LineSegment
+                    End="33.5,-7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33.5,-7"
+                    Point2="33.5,-11"
+                    Point3="37.5,-11" />
+                  <mssgle:LineSegment
+                    End="59.5,-11" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - Load from stgProfit to FactProfit.Paths[Lookup Match Output1]"
+          TopLeft="350.375,219">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - Load from stgProfit to FactProfit.Paths[Lookup Match Output]"
+          TopLeft="350.125,136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,10.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - Load from stgProfit to FactProfit.Paths[Derived Column Output]"
+          TopLeft="352.375,321">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgProfit to FactProfit\Lookup companyKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCompany]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgProfit to FactProfit\stgProfit">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgProfit to FactProfit\FactProfit">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgProfit to FactProfit\Lookup movieKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimMovie]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-V3U3D65_TRIDAT.ExternalSources"
+  DTS:DTSID="{F0529DA4-DC77-477A-9193-8FC88565AAC8}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-V3U3D65\TRIDAT;Initial Catalog=ExternalSources;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Movies-ETL-{F0529DA4-DC77-477A-9193-8FC88565AAC8}DESKTOP-V3U3D65\TRIDAT.ExternalSources;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
